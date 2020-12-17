@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title> DMC Immersive Gallery </title>
+
+        <!-- Include javascript 3d and panorama libraries -->
+        <script src="javascript/three.min.js"></script>
+        <script src="javascript/panolens.min.js"></script>
+    </head>
+
+    <body>
+
+        <div class="pano-image">
+            <iframe allowfullscreen src="gallery-360/DSCN0001.JPG"></iframe>
+        </div>
+
+        <style>
+            .pano-image {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+        <script>
+            const panoImage = document.querySelector('.pano-image');
+            const galleryPano = 'gallery-360/DSCN0001.JPG';
+
+            const panorama = new PANOLENS.ImagePanorama(galleryPano);
+            const viewer = new PANOLENS.Viewer({
+                container: panoImage
+            });
+
+            viewer.add(panorama);
+        </script>
+        
+        
+    </body>
+</html>
